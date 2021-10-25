@@ -4,44 +4,25 @@ end
 
 def test_is_palindrome
   correct = 0
-  correct += 1 if test1
-  correct += 1 if test2
-  correct += 1 if test3
-  correct += 1 if test4
-  correct += 1 if test5
-  correct += 1 if test6
-  correct += 1 if test7
-  total = 7
+  correct += handle_test(1, "aba", true)
+  correct += handle_test(1, "momo", false)
+  correct += handle_test(1, "rail at a liar", true)
+  correct += handle_test(1, "", false)
+  correct += handle_test(1, "Simplébo", true)
+  correct += handle_test(1, "Engage le jeu que je le gagne", true)
+  total = 6
   puts "Tests: #{correct} / #{total}"
 end
 
-def test1
-  is_palindrome("aba") == true
+def handle_test(number, expression, expected)
+  puts "Test #{number} with expression: #{expression}"
+  actual = is_palindrome(expression)
+  if actual != expected
+    puts "x Expected #{expected}, got #{actual}"
+  end
+  actual == expected ? 1 : 0
 end
 
-def test2
-  is_palindrome("momo") == false
-end
-
-def test3
-  is_palindrome("rail at a liar") == true
-end
-
-def test4
-  is_palindrome("") == true
-end
-
-def test5
-  is_palindrome("Simplébo") == false
-end
-
-def test6
-  is_palindrome("Engage le jeu que je le gagne") == true
-end
-
-def test7
-  is_palindrome("Engage le jeu que je le gagne") == true
-end
 
 is_palindrome("grapstor")
 test_is_palindrome
