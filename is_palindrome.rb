@@ -1,5 +1,5 @@
 def is_palindrome(word)
-  naive(word)
+  api(word)
 end
 
 def naive(word)
@@ -7,6 +7,10 @@ def naive(word)
     return false unless letter == word[word.length - 1 - i]
   end
   true
+end
+
+def api(word)
+  word.split('').reverse.join == word
 end
 
 @correct = 0
