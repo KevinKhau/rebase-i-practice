@@ -1,8 +1,5 @@
 def is_palindrome(word)
-  expression = without_space(word)
-  expression = expression.downcase
-  expression = without_accent(expression)
-  expression = without_punctuation(expression)
+  expression = format_word(word)
   api(expression)
 end
 
@@ -19,6 +16,14 @@ end
 
 def api(word)
   word.split('').reverse.join == word
+end
+
+def format_word(word)
+  expression = without_space(word)
+  expression = expression.downcase
+  expression = without_accent(expression)
+  expression = without_punctuation(expression)
+  expression
 end
 
 def without_space(word)
