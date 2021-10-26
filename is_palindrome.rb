@@ -1,5 +1,5 @@
 def is_palindrome(word)
-  word.split('').each_with_index do |letter, i|
+  word.split('').take(word.length / 2).each_with_index do |letter, i|
     return false if letter != word[word.length - 1 - i]
   end
   true
