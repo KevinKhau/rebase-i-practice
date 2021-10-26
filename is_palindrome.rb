@@ -8,9 +8,10 @@ def test_is_palindrome
   handle_test("aba", true)
   handle_test("momo", false)
   handle_test("rail at a liar", true)
-  handle_test("", false)
-  handle_test("Simplébo", true)
+  handle_test("", true)
+  handle_test("Simplébo", false)
   handle_test("Engage le jeu que je le gagne", true)
+  handle_test("Tâte l'État", true)
   puts "Tests: #{@correct} / #{@count}"
 end
 
