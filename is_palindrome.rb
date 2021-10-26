@@ -2,6 +2,7 @@ def is_palindrome(word)
   expression = without_space(word)
   expression = expression.downcase
   expression = without_accent(expression)
+  expression = without_punctuation(expression)
   api(expression)
 end
 
@@ -28,6 +29,10 @@ def without_accent(word)
   require "i18n"
   I18n.available_locales = [:en]
   I18n.transliterate(word)
+end
+
+def without_punctuation(word)
+  word.gsub(/[[:punct:]]/, '')
 end
 
 @correct = 0
