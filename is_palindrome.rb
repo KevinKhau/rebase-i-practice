@@ -1,5 +1,5 @@
 def is_palindrome(word)
-  expression = space_insensitive(word)
+  expression = without_space(word)
   api(expression)
 end
 
@@ -18,7 +18,7 @@ def api(word)
   word.split('').reverse.join == word
 end
 
-def space_insensitive(word)
+def without_space(word)
   word.delete(' ')
 end
 
