@@ -1,5 +1,7 @@
 def is_palindrome(word)
   expression = without_space(word)
+  expression = expression.downcase
+  expression = without_accent(expression)
   api(expression)
 end
 
@@ -20,6 +22,12 @@ end
 
 def without_space(word)
   word.delete(' ')
+end
+
+def without_accent(word)
+  require "i18n"
+  I18n.available_locales = [:en]
+  I18n.transliterate(word)
 end
 
 @correct = 0
